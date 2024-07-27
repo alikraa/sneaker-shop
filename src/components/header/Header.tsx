@@ -1,14 +1,17 @@
+import { useLocation } from 'react-router-dom';
+import Info from '../info/Info';
 import logo from '../../assets/images/header-icons/logo.svg';
 import searchIcon from '../../assets/images/header-icons/search-icon.svg';
 import userIcon from '../../assets/images/header-icons/user-icon.svg';
 import heartIcon from '../../assets/images/header-icons/heart-icon.svg';
 import shoppingCartIcon from '../../assets/images/header-icons/shopping-cart-icon.svg';
-import cover from '../../assets/images/cover.jpg';
 import style from './style.module.scss';
 
 interface HeaderProps {}
 
 const Header: React.FC<HeaderProps> = () => {
+  const location = useLocation();
+
   return (
     <header>
       <div className={style.headerTop}>
@@ -40,23 +43,9 @@ const Header: React.FC<HeaderProps> = () => {
       </div>
 
       <hr />
+      {/* <Info /> */}
 
-      <div className={style.headerContent}>
-        <div className={style.headerContentCover}>
-          <div className="cover-block">
-            <p>
-              Мы помогаем Вам привезти одежду и аксессуары как можно быстрее с
-              китайских площадок: Nike, Adidas, Poizon и других (с какой
-              площадки, какой товар Вы можете узнать благодаря информационным
-              стикерам)
-            </p>
-            <button className="cover-btn">
-              <a href="#content">за покупками</a>
-            </button>
-          </div>
-          <img src={cover} alt="Cover" />
-        </div>
-      </div>
+      {location.pathname === '/' ? <Info /> : ''}
     </header>
   );
 };
