@@ -1,0 +1,35 @@
+.categories {
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 70px;
+
+  .category {
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+
+    div {
+      width: 23vw;
+      height: 35vh;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    img {
+      width: 70%;
+      height: 70%;
+    }
+
+    img[id='3'] {
+      width: 130%;
+      height: 130%;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}
