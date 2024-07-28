@@ -1,4 +1,4 @@
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import Info from '../info/Info';
 import logo from '../../assets/images/header-icons/logo.svg';
 import searchIcon from '../../assets/images/header-icons/search-icon.svg';
@@ -15,10 +15,13 @@ const Header: React.FC<HeaderProps> = () => {
   return (
     <header>
       <div className={style.headerTop}>
-        <div className={style.headerTopLogo}>
-          <img src={logo} alt="Logo" />
-          <h1>RunRun Store</h1>
-        </div>
+        <Link to={'/'} style={{ textDecoration: 'none' }}>
+          <div className={style.headerTopLogo}>
+            <img src={logo} alt="Logo" />
+            <h1>RunRun Store</h1>
+          </div>
+        </Link>
+
         <form className={style.headerTopForm}>
           <img src={searchIcon} alt="Search Icon" />
           <input type="text" />

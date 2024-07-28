@@ -1,0 +1,20 @@
+.backButton {
+  padding: 15px;
+  border-radius: 25px;
+  cursor: pointer;
+  border: 2px solid #8d8d8d;
+  outline-color: transparent;
+  background-color: #081f49;
+  color: #fff;
+  margin-left: 50px;
+
+  &:hover,
+  &:active {
+    background-color: #fff;
+  }
+
+  img {
+    width: 95px;
+    height: 30px;
+  }
+}
