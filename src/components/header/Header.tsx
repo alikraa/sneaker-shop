@@ -43,8 +43,6 @@ const Header: React.FC<HeaderProps> = () => {
       </div>
 
       <hr />
-      {/* <Info /> */}
-
       {location.pathname === '/' ? <Info /> : ''}
     </header>
   );
