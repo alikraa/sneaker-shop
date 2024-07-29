@@ -69,6 +69,8 @@ header {
         align-self: center;
         cursor: pointer;
 
+        position: relative;
+
         .userIcon {
           width: 37px;
           height: 37px;
@@ -82,6 +84,22 @@ header {
         .cartIcon {
           width: 35px;
           height: 35px;
+        }
+
+        span {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 28px;
+          height: 28px;
+          background-color: #fd4c4c;
+          font-size: 15px;
+          color: #fff;
+          border-radius: 50%;
+
+          position: absolute;
+          top: -25%;
+          right: -25%;
         }
       }
     }

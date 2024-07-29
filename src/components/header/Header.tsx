@@ -39,9 +39,16 @@ const Header: React.FC<HeaderProps> = () => {
               className={style.favoritesIcon}
             />
           </li>
-          <li>
-            <img src={shoppingCartIcon} alt="Cart" className={style.cartIcon} />
-          </li>
+          <Link to={'/cart'} style={{ textDecoration: 'none' }}>
+            <li>
+              <img
+                src={shoppingCartIcon}
+                alt="Cart"
+                className={style.cartIcon}
+              />
+              <span>3</span>
+            </li>
+          </Link>
         </ul>
       </div>
 

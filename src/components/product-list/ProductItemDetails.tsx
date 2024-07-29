@@ -10,7 +10,7 @@ const ProductItemDetails: React.FC<ProductItemDetailsProps> = () => {
   const [currentImg, setCurrentImg] = useState(sneakerImg);
 
   return (
-    <div className={style.productItemDetailsWrapper}>
+    <section className={style.productItemDetailsWrapper}>
       <BackButton />
       <div className={style.productItemDetails}>
         <div className={style.productItemDetailsImages}>
@@ -44,7 +44,7 @@ const ProductItemDetails: React.FC<ProductItemDetailsProps> = () => {
           <button>добавить в корзину</button>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
