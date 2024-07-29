@@ -1,0 +1,12 @@
+.favoritesWrapper {
+  min-height: 65vh;
+  padding: 50px;
+
+  .favorites {
+    padding: 50px;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}

@@ -18,7 +18,7 @@ const CartItem: React.FC<CartItemProps> = () => {
 
       <div className={style.cartItemPrice}>
         <p>price</p>
-        <button>x</button>
+        <button title="Удалить из корзины">x</button>
       </div>
     </div>
   );

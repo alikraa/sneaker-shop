@@ -2,36 +2,42 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+}
 
-  .productListItem {
+.productListItem {
+  border: 2px solid #8d8d8d;
+  border-radius: 30px;
+  padding: 25px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  .favorites {
+    width: 30px;
+    height: 30px;
+    align-self: flex-end;
+  }
+
+  img {
+    width: 250px;
+    height: 200px;
+  }
+
+  button {
+    padding: 15px;
+    border-radius: 25px;
+    font-size: 22px;
+    cursor: pointer;
     border: 2px solid #8d8d8d;
-    border-radius: 30px;
-    padding: 25px;
+    outline-color: transparent;
+    background-color: #081f49;
+    color: #fff;
 
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-
-    img {
-      width: 250px;
-      height: 200px;
-    }
-
-    button {
-      padding: 15px;
-      border-radius: 25px;
-      font-size: 22px;
-      cursor: pointer;
-      border: 2px solid #8d8d8d;
-      outline-color: transparent;
-      background-color: #081f49;
-      color: #fff;
-
-      &:hover,
-      &:active {
-        color: #0000ff;
-        background-color: #fff;
-      }
+    &:hover,
+    &:active {
+      color: #0000ff;
+      background-color: #fff;
     }
   }
 }

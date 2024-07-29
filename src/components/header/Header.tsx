@@ -30,21 +30,30 @@ const Header: React.FC<HeaderProps> = () => {
 
         <ul className={style.personalData}>
           <li>
-            <img src={userIcon} alt="User" className={style.userIcon} />
-          </li>
-          <li>
             <img
-              src={heartIcon}
-              alt="Favorites"
-              className={style.favoritesIcon}
+              src={userIcon}
+              alt="User"
+              className={style.userIcon}
+              title="Профиль"
             />
           </li>
+          <Link to={'/favorites'} style={{ textDecoration: 'none' }}>
+            <li>
+              <img
+                src={heartIcon}
+                alt="Favorites"
+                className={style.favoritesIcon}
+                title="Добавить в избранное"
+              />
+            </li>
+          </Link>
           <Link to={'/cart'} style={{ textDecoration: 'none' }}>
             <li>
               <img
                 src={shoppingCartIcon}
                 alt="Cart"
                 className={style.cartIcon}
+                title="Корзина"
               />
               <span>3</span>
             </li>
