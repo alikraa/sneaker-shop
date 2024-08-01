@@ -14,7 +14,11 @@ const CartItem: React.FC<CartItemProps> = () => {
         </div>
       </div>
 
-      <div className={style.cartItemCounter}>COUNTER</div>
+      <div className={style.cartItemCounter}>
+        <button>–</button>
+        <input type="number" min={1} max={99} />
+        <button>+</button>
+      </div>
 
       <div className={style.cartItemPrice}>
         <p>price</p>

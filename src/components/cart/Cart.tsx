@@ -15,6 +15,8 @@ const Cart: React.FC<CartProps> = () => {
         <hr />
         <CartItem />
         <hr />
+        <h4>0 руб.</h4>
+        <button className={style.cartButton}>оформить заказ</button>
       </div>
     </section>
   );

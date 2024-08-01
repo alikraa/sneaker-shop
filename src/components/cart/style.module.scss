@@ -9,6 +9,30 @@
     gap: 20px;
     padding: 50px;
 
+    h4 {
+      text-align: right;
+      font-size: 29px;
+    }
+
+    .cartButton {
+      padding: 20px;
+      border-radius: 25px;
+      font-size: 25px;
+      cursor: pointer;
+      border: 2px solid #8d8d8d;
+      outline-color: transparent;
+      background-color: #081f49;
+      color: #fff;
+
+      align-self: flex-end;
+
+      &:hover,
+      &:active {
+        color: #0000ff;
+        background-color: #fff;
+      }
+    }
+
     .cartItem {
       display: flex;
       justify-content: space-between;
@@ -30,6 +54,41 @@
 
       .cartItemCounter {
         align-self: center;
+
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+
+        input {
+          width: 25%;
+          font-size: 19px;
+          padding: 10px;
+          outline-color: transparent;
+          border: 2px solid #8d8d8d;
+          border-radius: 10px;
+
+          &::-webkit-inner-spin-button,
+          &::-webkit-outer-spin-button {
+            appearance: none;
+          }
+        }
+
+        button {
+          padding: 0 15px;
+          border-radius: 15px;
+          font-size: 19px;
+          cursor: pointer;
+          border: 2px solid #8d8d8d;
+          outline-color: transparent;
+          background-color: #081f49;
+          color: #fff;
+
+          &:hover,
+          &:active {
+            color: #0000ff;
+            background-color: #fff;
+          }
+        }
       }
 
       .cartItemPrice {
