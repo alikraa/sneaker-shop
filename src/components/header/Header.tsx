@@ -1,5 +1,8 @@
+import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Info from '../info/Info';
+import { useAppDispatch } from '../../redux/hooks';
+import { setSearchValue } from '../../redux/shop-slice';
 import logo from '../../assets/images/header-icons/logo.svg';
 import searchIcon from '../../assets/images/header-icons/search-icon.svg';
 import userIcon from '../../assets/images/header-icons/user-icon.svg';
@@ -11,6 +14,14 @@ interface HeaderProps {}
 
 const Header: React.FC<HeaderProps> = () => {
   const location = useLocation();
+  const dispatch = useAppDispatch();
+  const [value, setValue] = useState<string>('');
+
+  const saveValue = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    dispatch(setSearchValue(value.toLowerCase()));
+  };
 
   return (
     <header>
@@ -22,9 +33,16 @@ const Header: React.FC<HeaderProps> = () => {
           </div>
         </Link>
 
-        <form className={style.headerTopForm}>
+        <form className={style.headerTopForm} onSubmit={saveValue}>
           <img src={searchIcon} alt="Search Icon" />
-          <input type="text" />
+          <input
+            type="text"
+            value={value}
+            onChange={(event) => {
+              setValue(event.target.value);
+              dispatch(setSearchValue(event.target.value.toLowerCase()));
+            }}
+          />
           <button>искать</button>
         </form>
 

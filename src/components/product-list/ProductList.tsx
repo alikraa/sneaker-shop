@@ -1,19 +1,24 @@
 import ProductItem from './ProductItem';
-// import sneakerImg from '../../assets/images/sneaker.jpg';
-// import { productList } from '../../ts/data';
-import database from '../../database.json';
+import { useAppSelector } from '../../redux/hooks';
+import { RootState } from '../../redux/store';
 import style from './style.module.scss';
 
 interface ProductListProps {}
 
 const ProductList: React.FC<ProductListProps> = () => {
-  console.log(database.map((item) => item.data.detail));
+  const { productList, searchValue } = useAppSelector(
+    (state: RootState) => state.shopData
+  );
 
   return (
     <div className={style.productList}>
-      {database.map((item) => (
-        <ProductItem key={item.data.detail.spuId} item={item} />
-      ))}
+      {productList
+        .filter((item) =>
+          item.data.detail.title.toLowerCase().includes(searchValue)
+        )
+        .map((item) => (
+          <ProductItem key={item.data.detail.spuId} item={item} />
+        ))}
     </div>
   );
 };
