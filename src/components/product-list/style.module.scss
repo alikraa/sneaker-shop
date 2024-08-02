@@ -5,12 +5,16 @@
 }
 
 .productListItem {
+  width: 320px;
+  height: 450px;
+
   border: 2px solid #8d8d8d;
   border-radius: 30px;
   padding: 25px;
 
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: 10px;
 
   .favorites {
@@ -19,9 +23,9 @@
     align-self: flex-end;
   }
 
-  img {
-    width: 250px;
-    height: 200px;
+  .productItemImg {
+    width: 85%;
+    align-self: center;
   }
 
   button {
