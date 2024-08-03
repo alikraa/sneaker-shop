@@ -23,9 +23,16 @@
     align-self: flex-end;
   }
 
-  .productItemImg {
+  .productItemImgwrapper {
+    margin: 0 auto;
     width: 85%;
-    align-self: center;
+    cursor: pointer;
+
+    img {
+      display: block;
+      margin: 0 auto;
+      width: 100%;
+    }
   }
 
   button {
