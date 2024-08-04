@@ -1,17 +1,20 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { Item } from '../ts/types';
 import database from '../database.json';
+import { findProduct } from '../ts/data';
 
 interface InitialState {
   productList: Item[];
   searchValue: string;
   currentBrand: string[];
+  favoritesList: Item[];
 }
 
 const initialState: InitialState = {
   productList: database,
   searchValue: '',
   currentBrand: [],
+  favoritesList: [],
 };
 
 const shopSlice = createSlice({
@@ -50,10 +53,25 @@ const shopSlice = createSlice({
         state.productList = database;
       }
     },
+
+    addToFavorites(state, action: PayloadAction<Item>) {
+      const product = findProduct(
+        state.favoritesList,
+        action.payload.data.detail.spuId
+      );
+
+      if (!product) {
+        state.favoritesList.push(action.payload);
+      } else {
+        state.favoritesList = state.favoritesList.filter(
+          (item) => item.data.detail.spuId !== action.payload.data.detail.spuId
+        );
+      }
+    },
   },
 });
 
-export const { setSearchValue, setCurrentBrand, sortingByBrands } =
+export const { setSearchValue, setCurrentBrand, sortingByBrands, addToFavorites } =
   shopSlice.actions;
 
 export default shopSlice.reducer;

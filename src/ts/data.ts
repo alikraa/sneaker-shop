@@ -1,5 +1,6 @@
 import { nanoid } from 'nanoid';
 import database from '../database.json';
+import { Item } from './types';
 
 export const productList = [
   {
@@ -40,4 +41,7 @@ const brands = Array.from(newSet).map((item) => ({
   title: item,
 }));
 
-export { brands };
+const findProduct = (arr: Item[], id: number) =>
+  arr.find((item) => item.data.detail.spuId === id);
+
+export { brands, findProduct };
